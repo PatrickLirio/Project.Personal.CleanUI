@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/Button/Button"
 
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
   return (
     <>
         <h1>Edu Pass</h1>
+        <Button/>
     </>
   )
 }
