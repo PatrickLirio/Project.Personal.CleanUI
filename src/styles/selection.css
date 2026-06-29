@@ -1,0 +1,4 @@
+::selection {
+  background: var(--color-primary-200);
+  color: var(--color-primary-900);
+}
