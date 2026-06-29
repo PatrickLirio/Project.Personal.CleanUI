@@ -1,75 +1,43 @@
-# React + TypeScript + Vite
+Token Primitives
+└── Raw values: colors, spacing, radius, shadows
+    These are not components. They are variables.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+        ↓
 
-Currently, two official plugins are available:
+Layout Primitives
+└── Box, Flex, Stack, Grid, Spacer, Container
+    No visual opinion. Structure only.
+    Invisible when rendered alone.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+        ↓
 
-## React Compiler
+UI Components  ← you are here
+└── Button, Input, Card, Table, Badge,
+    Avatar, Checkbox, Select, Tooltip...
+    Have visual opinion. Consume tokens.
+    Usable standalone.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+        ↓
 
-## Expanding the ESLint configuration
+Composite Components
+└── Modal, Dropdown, DatePicker,
+    DataTable, Form, Navbar, Sidebar...
+    Combine multiple UI components.
+    Contain internal layout primitives.
+    Too complex to be a single element.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+        ↓
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Feature Components
+└── LoginForm, UserProfileCard,
+    TransactionHistory, DashboardSummary...
+    Business logic lives here.
+    Specific to your application domain.
+    Not reusable across products.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+        ↓
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
+Pages
+└── DashboardPage, SettingsPage, LoginPage...
+    Orchestrate features.
+    Own routing and data fetching concerns.

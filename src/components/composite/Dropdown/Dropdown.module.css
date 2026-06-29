@@ -1,0 +1,210 @@
+
+/* =====================
+   WRAPPER
+   ===================== */
+.wrapper {
+    display: inline-flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    position: relative;
+}
+
+.fullWidth {
+    width: 100%;
+}
+
+.fullWidth .trigger {
+    width: 100%;
+}
+
+/* =====================
+   LABEL
+   ===================== */
+.label {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-primary);
+    line-height: var(--line-height-tight);
+}
+
+.labelDisabled {
+    color: var(--color-text-disabled);
+}
+
+/* =====================
+   TRIGGER
+   ===================== */
+.trigger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-3);
+    min-height: 40px;
+    min-width: 160px;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius-md);
+    font-family: var(--font-family-sans);
+    font-size: var(--font-size-md);
+    color: var(--color-text-primary);
+    cursor: pointer;
+    transition:
+        border-color 150ms ease,
+        box-shadow 150ms ease;
+    text-align: left;
+}
+
+.trigger:hover:not(:disabled) {
+    border-color: var(--color-primary);
+}
+
+.trigger:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+.triggerOpen {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px var(--color-primary-subtle);
+}
+
+.triggerError {
+    border-color: var(--color-danger);
+}
+
+.triggerError:focus-visible,
+.triggerError.triggerOpen {
+    box-shadow: 0 0 0 3px var(--color-danger-subtle);
+}
+
+.triggerDisabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* =====================
+   TRIGGER LABEL
+   ===================== */
+.triggerLabel {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.placeholder {
+    color: var(--color-text-disabled);
+}
+
+/* =====================
+   CHEVRON
+   ===================== */
+.chevron {
+    display: inline-flex;
+    flex-shrink: 0;
+    color: var(--color-text-secondary);
+    transition: transform 150ms ease;
+    font-size: var(--font-size-sm);
+}
+
+.chevronOpen {
+    transform: rotate(180deg);
+}
+
+/* =====================
+   LISTBOX
+   ===================== */
+.listbox {
+    position: absolute;
+    z-index: var(--z-dropdown);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    padding: var(--space-1) 0;
+    margin: 0;
+    list-style: none;
+    max-height: 240px;
+    overflow-y: auto;
+    animation: fadeIn 100ms ease;
+}
+
+/* =====================
+   OPTIONS
+   ===================== */
+.option {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--font-size-md);
+    color: var(--color-text-primary);
+    cursor: pointer;
+    transition: background-color 100ms ease;
+    user-select: none;
+}
+
+.optionSelected {
+    background-color: var(--color-primary-subtle);
+    color: var(--color-primary);
+    font-weight: var(--font-weight-medium);
+}
+
+.optionFocused {
+    background-color: var(--color-surface-hover);
+}
+
+.optionSelected.optionFocused {
+    background-color: var(--color-primary-subtle-hover);
+}
+
+.optionDisabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.optionIcon {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.checkmark {
+    margin-left: auto;
+    color: var(--color-primary);
+    font-size: var(--font-size-sm);
+}
+
+/* =====================
+   DESCRIPTION
+   ===================== */
+.description {
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-tight);
+}
+
+.descriptionHelper {
+    color: var(--color-text-secondary);
+}
+
+.descriptionError {
+    color: var(--color-danger);
+}
+
+/* =====================
+   ANIMATION
+   ===================== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
