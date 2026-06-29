@@ -1,0 +1,19 @@
+:root {
+
+    --color-background: var(--color-gray-50);
+
+    --color-surface: var(--color-white);
+
+    --color-surface-hover: var(--color-gray-100);
+
+    --color-border: var(--color-gray-200);
+
+    --color-text-primary: var(--color-gray-900);
+
+    --color-text-secondary: var(--color-gray-600);
+
+    --color-primary: var(--color-primary-500);
+
+    --color-primary-hover: var(--color-primary-600);
+
+}
