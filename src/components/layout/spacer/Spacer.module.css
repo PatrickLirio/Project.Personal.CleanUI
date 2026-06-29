@@ -1,0 +1,14 @@
+.spacer {
+    display: block;
+    flex-shrink: 0;  /* never shrink inside a flex container */
+}
+
+.horizontal {
+    flex: 1 1 auto;  /* grows to fill horizontal space when no size given */
+    height: 1px;     /* minimum presence */
+}
+
+.vertical {
+    flex: 1 1 auto;
+    width: 1px;
+}
